@@ -6726,11 +6726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Student\\Documents\\martiparti\\GameWorld\\GameWorld\\GameWorld.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\Documents\\martiparti\\DiplomenProekt\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj",
       "projectName": "GameWorld",
-      "projectPath": "C:\\Users\\Student\\Documents\\martiparti\\GameWorld\\GameWorld\\GameWorld.csproj",
+      "projectPath": "C:\\Users\\Student\\Documents\\martiparti\\DiplomenProekt\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj",
       "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Student\\Documents\\martiparti\\GameWorld\\GameWorld\\obj\\",
+      "outputPath": "C:\\Users\\Student\\Documents\\martiparti\\DiplomenProekt\\DiplomenProekt\\GameWorld\\GameWorld\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
