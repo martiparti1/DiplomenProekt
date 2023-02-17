@@ -23,9 +23,16 @@ namespace GameWorld.Domain
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
+        public string Description { get; set; }
+
         [Required]
         public int Quantity { get; set; }
+        
+        [Required]
+        [Range(0,5000)]
         public decimal Price { get; set; }
+        [Required]
+        [Range(0,100)]
         public decimal Discount { get; set; }
         public decimal FinalPrice
         {

@@ -24,12 +24,15 @@ namespace GameWorld.Domain
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public string Image { get; set; }
+        public string Description { get; set; }
 
         [Required]
         [Range(0,5000)]
         public int Quantity { get; set; }
         [Required]
+        [Range(0,5000)]
         public decimal Price { get; set; }
+        [Range(0,100)]
         public decimal Discount { get; set; }
 
         public virtual IEnumerable<Purchase> Orders { get; set; } = new List<Purchase>();
