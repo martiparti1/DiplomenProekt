@@ -25,7 +25,7 @@ namespace GameWorld.Domain
         public virtual Category Category { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
-
+        public string Platform { get; set; }
         [Required]
         [Range(0,5000)]
         public int Quantity { get; set; }
@@ -35,7 +35,7 @@ namespace GameWorld.Domain
         [Range(0,100)]
         public decimal Discount { get; set; }
 
-        public virtual IEnumerable<Purchase> Orders { get; set; } = new List<Purchase>();
+        public virtual IEnumerable<Order> Orders { get; set; } = new List<Order>();
 
     }
 }

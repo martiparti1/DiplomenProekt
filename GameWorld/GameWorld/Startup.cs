@@ -1,5 +1,7 @@
+using GameWorld.Abstraction;
 using GameWorld.Data;
 using GameWorld.Domain;
+using GameWorld.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebShopDemo.Infrastructure;
 
 namespace GameWorld
 {
@@ -38,6 +41,9 @@ namespace GameWorld
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IMakerService, MakerService>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -56,6 +62,7 @@ namespace GameWorld
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.PrepareDatabase();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

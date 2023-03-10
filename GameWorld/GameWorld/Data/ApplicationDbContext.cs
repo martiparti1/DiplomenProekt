@@ -16,7 +16,7 @@ namespace GameWorld.Data
         }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Maker> Makers { get; set; }
         public DbSet<Category> Categories { get; set; }
         

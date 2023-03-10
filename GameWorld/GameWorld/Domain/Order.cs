@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameWorld.Domain
 {
-    public class Purchase
+    public class Order
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
