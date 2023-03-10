@@ -1,1 +1,1 @@
-make product controller and the rest
+fix product name, page 10 part 4

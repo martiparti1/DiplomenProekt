@@ -13,7 +13,7 @@ namespace GameWorld.Domain
         public int Id { get; set; }
         
         [Required]
-        [MaxLength(60)]
+        
         public string ProductName { get; set; }
 
         [Required]
