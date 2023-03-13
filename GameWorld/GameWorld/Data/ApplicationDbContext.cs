@@ -21,6 +21,7 @@ namespace GameWorld.Data
         public DbSet<Maker> Makers { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<GameWorld.Models.Product.ProductCreateVM> ProductCreateVM { get; set; }
+        public DbSet<GameWorld.Models.Product.ProductIndexVM> ProductIndexVM { get; set; }
         
     }
 }

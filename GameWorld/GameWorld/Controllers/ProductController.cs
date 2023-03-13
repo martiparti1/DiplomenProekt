@@ -55,5 +55,27 @@ namespace GameWorld.Controllers
             }
             return View();
         }
+
+        public ActionResult Index(string searchStringCategoryName, string searchStringMakerName)
+        {
+            List<ProductIndexVM> products = _productService.GetProducts(searchStringCategoryName, searchStringMakerName)
+                .Select(product => new ProductIndexVM
+                {
+                    Id=product.Id,
+                    ProductName = product.ProductName,
+                    MakerId = product.MakerId,
+                    MakerName = product.Maker.MakerName,
+                    CategoryId = product.CategoryId,
+                    CategoryName = product.Category.CategoryName,
+                    Image = product.Image,
+                    Description = product.Description,
+                    Platform = product.Platform,
+                    Quantity = product.Quantity,
+                    Price=product.Price,
+                    Discount = product.Discount
+
+                }).ToList();
+            return this.View(products);
+        }
     }
 }
