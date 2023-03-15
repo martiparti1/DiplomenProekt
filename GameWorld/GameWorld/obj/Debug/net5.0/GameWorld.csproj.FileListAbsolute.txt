@@ -840,3 +840,7 @@ C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\Ga
 C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\Create.cshtml.g.cs
 C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\DeleteSuccess.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\Delete.cshtml.g.cs

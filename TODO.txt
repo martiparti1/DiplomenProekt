@@ -1,1 +1,6 @@
-page 14 part 4 done 
+all of part 4 done;
+do a success page for creating a product;
+
+IDEAS FOR LATER ON :
+change the style of the site
+add a balance system like in steam 
