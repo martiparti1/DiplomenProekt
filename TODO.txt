@@ -1,4 +1,4 @@
-all of part 4 done;
+part 5 done;
 do a success page for creating a product;
 
 IDEAS FOR LATER ON :

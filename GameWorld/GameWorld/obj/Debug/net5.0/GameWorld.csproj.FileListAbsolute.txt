@@ -844,3 +844,7 @@ C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\Ga
 C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\DeleteSuccess.cshtml.g.cs
 C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
 C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\Delete.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Product\_OrderPartialView.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Order\Index.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Order\MyOrders.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Order\Create.cshtml.g.cs

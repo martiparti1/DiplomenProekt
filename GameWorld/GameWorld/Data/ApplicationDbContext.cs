@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using GameWorld.Models.Product;
+using GameWorld.Models.Model;
 
 namespace GameWorld.Data
 {
@@ -25,6 +26,8 @@ namespace GameWorld.Data
         public DbSet<GameWorld.Models.Product.ProductEditVM> ProductEditVM { get; set; }
         public DbSet<GameWorld.Models.Product.ProductDetailsVM> ProductDetailsVM { get; set; }
         public DbSet<GameWorld.Models.Product.ProductDeleteVM> ProductDeleteVM { get; set; }
+        public DbSet<GameWorld.Models.Model.OrderIndexVM> OrderIndexVM { get; set; }
+        public DbSet<GameWorld.Models.Model.OrderConfirmVM> OrderConfirmVM { get; set; }
         
     }
 }

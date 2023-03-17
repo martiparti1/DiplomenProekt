@@ -13,7 +13,7 @@ namespace GameWorld.Domain
         public int Id { get; set; }
 
         [Required]
-        public DateTime PurchaseDate { get; set; }
+        public DateTime OrderDate { get; set; }
 
         [Required]
         public int ProductId { get; set; }
