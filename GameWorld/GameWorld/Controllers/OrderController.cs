@@ -1,6 +1,6 @@
 ﻿using GameWorld.Data;
 using GameWorld.Domain;
-using GameWorld.Models.Model;
+using GameWorld.Models.Order;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

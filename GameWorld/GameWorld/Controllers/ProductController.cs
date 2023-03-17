@@ -55,10 +55,12 @@ namespace GameWorld.Controllers
                     product.Image, product.Description, product.Platform, product.Quantity, product.Price, product.Discount);
 
                 if (createdId)
-                { return RedirectToAction(nameof(Index)); }
+                { return this.RedirectToAction("CreateSuccess"); }
             }
             return View();
         }
+        public IActionResult CreateSuccess()
+        { return this.View(); }
 
         [AllowAnonymous]
         public ActionResult Index(string searchStringCategoryName, string searchStringMakerName)
