@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GameWorld.Domain;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebShopDemo.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ClientController : Controller
     {
         private readonly UserManager<ApplicationUser> userManager;

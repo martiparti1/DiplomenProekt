@@ -20,12 +20,24 @@
             </div>
             <div class="form-group">
                 <label asp-for="MakerId" class="control-label"></label>
-                <input asp-for="MakerId" class="form-control" />
+                @*<input asp-for="BrandId" class="form-control" />*@
+                <select asp-for="MakerId" class="form-control text-center">
+                    @foreach (var maker in Model.Makers)
+                    {
+                        <option value="@maker.Id">@maker.Name</option>
+                    }
+                </select>
                 <span asp-validation-for="MakerId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
-                <input asp-for="CategoryId" class="form-control" />
+                @*<input asp-for="CategoryId" class="form-control" />*@
+                <select asp-for="CategoryId" class="form-control text-center">
+                    @foreach (var category in Model.Categories)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">

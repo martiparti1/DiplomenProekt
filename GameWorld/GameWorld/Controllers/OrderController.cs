@@ -1,6 +1,7 @@
 ﻿using GameWorld.Data;
 using GameWorld.Domain;
 using GameWorld.Models.Order;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,14 @@ using System.Threading.Tasks;
 
 namespace GameWorld.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly ApplicationDbContext _context;
         public OrderController(ApplicationDbContext context)
         { this._context = context; }
 
+        [Authorize(Roles ="Administrator")]
         public IActionResult Index()
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
