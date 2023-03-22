@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using GameWorld.Models.Product;
 using GameWorld.Models.Order;
+using GameWorld.Models.Statistics;
 
 namespace GameWorld.Data
 {
@@ -28,6 +29,7 @@ namespace GameWorld.Data
         public DbSet<GameWorld.Models.Product.ProductDeleteVM> ProductDeleteVM { get; set; }
         public DbSet<GameWorld.Models.Order.OrderIndexVM> OrderIndexVM { get; set; }
         public DbSet<GameWorld.Models.Order.OrderConfirmVM> OrderConfirmVM { get; set; }
+        
         
     }
 }
