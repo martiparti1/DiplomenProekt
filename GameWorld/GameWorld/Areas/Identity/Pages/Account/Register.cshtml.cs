@@ -74,6 +74,7 @@ namespace GameWorld.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            public decimal Balance { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -88,7 +89,7 @@ namespace GameWorld.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { FirstName = Input.FirstName , LastName = Input.LastName , Address = Input.Address , UserName = Input.Username , Email = Input.Email };
+                var user = new ApplicationUser { FirstName = Input.FirstName , LastName = Input.LastName , Address = Input.Address , UserName = Input.Username , Email = Input.Email, Balance = 100 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

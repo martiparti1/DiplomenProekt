@@ -1,8 +1,9 @@
-part 6 done;
+part 7 done;
 success page done;
 fix the filter system;
+balance feature adde . user can now buy an item if he has enough money. create a view for if he doenst. make it so that the user can see his balance;
 
 IDEAS FOR LATER ON :
 change the style of the site
-add a balance system like in steam 
+
 improve the filter system

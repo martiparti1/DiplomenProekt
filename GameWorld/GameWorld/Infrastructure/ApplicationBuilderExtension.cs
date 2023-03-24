@@ -57,6 +57,7 @@ namespace WebShopDemo.Infrastructure
                 user.Address = "admin";
                 user.UserName = "admin";
                 user.Email = "admin@admin.com";
+                user.Balance = 10000;
 
                 var result = await userManager.CreateAsync(user, "admin123");
                 if (result.Succeeded)

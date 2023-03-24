@@ -119,10 +119,15 @@ namespace GameWorld.Controllers
                     Price = product.Price,
                     Discount = product.Discount
                 };
-                product.Quantity -= bindingModel.Quantity;
-
-                this._context.Products.Update(product);
-                this._context.Orders.Add(orderForDb);
+                var AllPrice = orderForDb.Quantity * orderForDb.Price - orderForDb.Quantity * orderForDb.Price * orderForDb.Discount / 100;
+                if (user.Balance >= AllPrice)
+                {
+                    user.Balance -= AllPrice;
+                    product.Quantity -= bindingModel.Quantity;
+                    this._context.Products.Update(product);
+                    this._context.Orders.Add(orderForDb);
+                }
+                
                 this._context.SaveChanges();
             }
             return this.RedirectToAction("Index","Product");
