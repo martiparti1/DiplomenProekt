@@ -2,7 +2,8 @@ part 7 done;
 success page done;
 fix the filter system;
 balance feature adde . user can now buy an item if he has enough money. create a view for if he doenst. make it so that the user can see his balance;
-
+added some kinda not working balance controller . fix that ;
+your balance : => hey user => logout;
 IDEAS FOR LATER ON :
 change the style of the site
 
