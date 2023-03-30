@@ -67,7 +67,7 @@ namespace GameWorld.Services
             }
             else if (!String.IsNullOrEmpty(searchStringMakerName))
             {
-                products = products.Where(x => x.Maker.MakerName.ToLower().Contains(searchStringMakerName)).ToList();
+                products = products.Where(x => x.Maker.MakerName.ToLower().Contains(searchStringMakerName.ToLower())).ToList();
             }
 
             return products;
