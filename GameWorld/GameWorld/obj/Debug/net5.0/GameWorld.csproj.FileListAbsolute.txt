@@ -1315,3 +1315,4 @@ C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\Ga
 C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Statistics\Index.cshtml.g.cs
 D:\coding stuff\MARTI DIPLOMEN PROEKT\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Statistics\Index.cshtml.g.cs
 D:\coding stuff\MARTI DIPLOMEN PROEKT\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Balance\AddBalance.cshtml.g.cs
+C:\Users\Student\Documents\martiparti\DiplomenProekt\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Balance\AddBalance.cshtml.g.cs

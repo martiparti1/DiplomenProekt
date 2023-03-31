@@ -2,7 +2,35 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+@*<div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+<div id="slideshow">
+    <img src="~/images/image1.jpg" alt="image 1" />
+    <img src="~/images/image2.png" alt="image 2" />
+    <img src="~/images/image3.jpg" alt="image 3" />
 </div>
+<script>
+    var slideShow = function (container) {
+        this.images = [];
+        this.curImage = 0;
+        for (i = 0; i < container.childElementCount; i++) {
+            this.images.push(container.children[i]);
+            this.images[i].style.dispaly = "none";
+        }
+        var nextSlide = function () {
+            for (var i = 0; i < this.image.length; i++) {
+                this.images[i].style.display = "none";
+            }
+            this.images[this.curImage].style.display = "block";
+            this.curImage++;
+            if (this.curImage >= this.image.length) {
+                this.curImage = 0;
+            }
+            window.setTimeout(nextSlide.bind(this), 600);
+        };
+        nextSlide.call(this);
+    };
+    slideShow(document.getElementById("slideshow"));
+</script>
