@@ -1,2 +1,4 @@
 balance almost done. do if not enough get more;
-slideshow added in index. not working. fix it;
+slideshow added in index. change images;
+COMPLETE restyling everywhere;
+ADD A WISHLIST
