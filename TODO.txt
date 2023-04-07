@@ -1,5 +1,5 @@
 balance almost done. do if not enough get more;
 slideshow added in index. change images;
 home page now displays 4 rando products;
-COMPLETE restyling everywhere;
+COMPLETE restyling everywhere; STARTED BY CHANGING THE PRODUCT INDEX
 ADD A WISHLIST
