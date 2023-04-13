@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using GameWorld.Domain
+@inject UserManager<ApplicationUser> UserManager
+@{ 
+    ViewData["Title"] = "Not enough balance";
+}
+<h1>Your balance isn't enough to place this order.</h1>
+<div>
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("AddBalance", "Balance")'">Add more balance</button>
+</div>

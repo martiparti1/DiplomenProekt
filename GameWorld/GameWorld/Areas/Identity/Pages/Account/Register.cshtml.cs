@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using GameWorld.Data;
 
 namespace GameWorld.Areas.Identity.Pages.Account
 {
@@ -23,17 +24,20 @@ namespace GameWorld.Areas.Identity.Pages.Account
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
+        private readonly ApplicationDbContext _context;
         
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            ILogger<RegisterModel> logger)
+            ILogger<RegisterModel> logger,
+            ApplicationDbContext context)
 
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _context = context;
 
         }
 
@@ -93,6 +97,14 @@ namespace GameWorld.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+
+                    Cart cart = new Cart
+                    {
+                        UserId = user.Id
+                    };
+                    _context.Carts.Add(cart);
+                    await _context.SaveChangesAsync();
+
                     _userManager.AddToRoleAsync(user, "Client").Wait();
                     _logger.LogInformation("User created a new account with password.");
 

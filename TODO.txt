@@ -1,5 +1,29 @@
-balance almost done. do if not enough get more;
+balance done feature wise. fix access for when not enough
 slideshow added in index. change images;
 home page now displays 4 rando products;
-COMPLETE restyling everywhere; STARTED BY CHANGING THE PRODUCT INDEX
+COMPLETE restyling everywhere; STARTED BY CHANGING THE PRODUCT INDEX ; DONE WORK ON SHOPPING HISTORY
 ADD A WISHLIST
+SHOPPING CART IS DONE;;;;;
+
+@*code below shows a little div that shows the platform*@
+                            @*when done with order and balance change platform*@
+                            @* @if(item.MakerName == "Sony")
+                            { 
+                                <a href="#!"> 
+                                    <div class="mask">
+                     <div class="d-flex justify-content-start align-items-end h-100">
+                        <h5><span class="badge bg-primary ms-2">PS4/PS5</span></h5>
+                    </div>
+                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                </a>
+                            }
+                            *@
+
+
+
+
+
+            

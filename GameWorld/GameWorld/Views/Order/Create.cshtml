@@ -9,24 +9,7 @@
         <h4>OrderConfirmVM</h4>
         <hr />
         <dl class="row">
-            @*<dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.User)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProductId)
-        </dd>*@
+            
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.ProductName)
             </dt>
@@ -50,8 +33,9 @@
                 @Html.DisplayNameFor(model => model.Quantity)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Quantity)
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control", min = "1", onchange = "calculateTotalPrice()" } })
             </dd>
+
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Price)
             </dt>
@@ -64,11 +48,11 @@
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Discount)
             </dd>
-            <dt class="col-sm-2">
+             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.TotalPrice)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.TotalPrice)
+                <span id="totalPrice"></span>
             </dd>
         </dl>
     </div>
@@ -78,9 +62,23 @@
     <input type="hidden" asp-for="ProductId" value="@Model.ProductId" />
     <input type="hidden" asp-for="Quantity" value="@Model.Quantity" />
     <input type="hidden" asp-for="UserId" value="@Model.UserId" />
-    <input type="hidden" asp-for="Price" value="@Model.Price" />
-    <input type="hidden" asp-for="Discount" value="@Model.Discount" />
 </form>
 <div>
     <a asp-controller="Product" asp-action="Index">Back to List</a>
 </div>
+
+<script>
+    $(document).ready(function() {
+        var price = parseFloat('@Model.Price');
+        var discount = parseFloat('@Model.Discount');
+        var quantity = parseInt($('#Quantity').val());
+        var totalPrice = (price * quantity) * ((100 - discount) / 100);
+        $('#TotalPrice').val(totalPrice.toFixed(2));
+
+        $('#Quantity').change(function() {
+            quantity = parseInt($('#Quantity').val());
+            totalPrice = (price * quantity) * ((100 - discount) / 100);
+            $('#TotalPrice').val(totalPrice.toFixed(2));
+        });
+    });
+</script>

@@ -94,6 +94,8 @@ namespace GameWorld.Controllers
                 Discount = product.Discount,
                 TotalPrice = quantity * product.Price - quantity * product.Price * product.Discount / 100
             };
+            
+
             return View(orderForDb);
         }
 
@@ -127,10 +129,17 @@ namespace GameWorld.Controllers
                     this._context.Products.Update(product);
                     this._context.Orders.Add(orderForDb);
                 }
-                
+                else 
+                {
+                    return this.RedirectToAction("NotEnoughBal", "Product");
+                }
+
                 this._context.SaveChanges();
             }
-            return this.RedirectToAction("Index","Product");
+            return this.RedirectToAction("Index", "Product");
         }
+
+        public IActionResult ThanksForBuying()
+        { return this.View(); }
     }
 }

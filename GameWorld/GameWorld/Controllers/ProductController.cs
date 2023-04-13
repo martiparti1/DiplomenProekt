@@ -61,6 +61,8 @@ namespace GameWorld.Controllers
         }
         public IActionResult CreateSuccess()
         { return this.View(); }
+        public IActionResult NotEnoughBal()
+        { return this.View(); }
 
         [AllowAnonymous]
         public ActionResult Index(string searchStringCategoryName, string searchStringMakerName)
