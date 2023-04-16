@@ -15,7 +15,7 @@ namespace GameWorld.Controllers
     public class CartController : Controller
     {
         //this is the cart controller
-        
+
         private readonly IProductService _productService;
         private readonly ApplicationDbContext _context;
 
@@ -25,11 +25,11 @@ namespace GameWorld.Controllers
             this._productService = productService;
         }
 
-        
+
         public IActionResult Index()
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var cart  = _context.Carts.SingleOrDefault(c=>c.UserId == userId);
+            var cart = _context.Carts.SingleOrDefault(c => c.UserId == userId);
 
             return View(cart);
         }
@@ -39,9 +39,9 @@ namespace GameWorld.Controllers
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = _context.Users.SingleOrDefault(u => u.Id == userId);
             var cart = _context.Carts.SingleOrDefault(c => c.UserId == userId);
-            var product = this._context.Products.SingleOrDefault(p=>p.Id == productId);
+            var product = this._context.Products.SingleOrDefault(p => p.Id == productId);
 
-            if (cart == null || user==null ) { return NotFound(); }
+            if (cart == null || user == null) { return NotFound(); }
 
             var cartItem = new CartItem
             {
@@ -60,20 +60,20 @@ namespace GameWorld.Controllers
                 cart.Items[index].Quantity++;
             }
             this._context.SaveChanges();
-            return RedirectToAction("Index" , "Cart");
+            return RedirectToAction("Index", "Cart");
         }
 
 
-        
 
-        public ActionResult RemoveFromCart(int productId) 
+
+        public ActionResult RemoveFromCart(int productId)
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = _context.Users.SingleOrDefault(u => u.Id == userId);
             var cart = _context.Carts.SingleOrDefault(c => c.UserId == userId);
             var product = this._context.Products.SingleOrDefault(p => p.Id == productId);
 
-            if (cart == null || user==null ) return null;
+            if (cart == null || user == null) return null;
 
             var cartItem = new CartItem
             {
@@ -82,7 +82,7 @@ namespace GameWorld.Controllers
             cart.Items.Remove(cartItem);
 
             this._context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index" , "Cart");
         }
 
         public ActionResult ClearCart()
@@ -103,10 +103,10 @@ namespace GameWorld.Controllers
             }
 
             this._context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Cart");
         }
 
-       // [HttpPost]
+        // [HttpPost]
         public ActionResult Checkout()
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);

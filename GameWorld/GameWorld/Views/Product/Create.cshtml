@@ -4,12 +4,74 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<style>
+   
 
-<h4>ProductCreateVM</h4>
+#product form {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  justify-content :center;
+  width: 800px; /* increase the width to your desired size */
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+}
+
+#product form label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#product form input[type="text"],
+#product form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+}
+
+#product form input[type="text"]:focus,
+#product form input[type="number"]:focus {
+  border-bottom: 2px solid #8d8d8d;
+  outline: none;
+}
+
+#product form button {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#product form button:hover {
+  background-color: #1b2631;
+}
+
+/* Add margin to the body to add spacing */
+.body-product-specific {
+  margin: 90px;
+  text-align: center; /* center the content horizontally */
+}
+
+</style>
+<h1>Create a new product!</h1>
+
+
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<body class="body-product-specific">
+
+<div id="product" class="row">
+    <div id="product" class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -19,7 +81,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="MakerId" class="control-label"></label>
-                @*<input asp-for="BrandId" class="form-control" />*@
+                
                 <select asp-for="MakerId" class="form-control text-center">
                     @foreach (var maker in Model.Makers)
                     {
@@ -30,7 +92,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
-                @*<input asp-for="CategoryId" class="form-control" />*@
+               
                 <select asp-for="CategoryId" class="form-control text-center">
                     @foreach (var category in Model.Categories)
                     {
@@ -79,6 +141,7 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+</body>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

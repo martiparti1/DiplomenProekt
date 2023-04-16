@@ -1,4 +1,22 @@
 ﻿<!DOCTYPE html>
+<style>
+    .navbar {
+        background: #E0E0E0;
+        border-radius: 20px; /* add rounded corners */
+        height: 65px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container{
+        border-radius: 20px;
+    }
+    
+.gradient-custom {
+background: linear-gradient(to bottom right, #bcccf7, #021340 );
+}
+
+</style>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,7 +25,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body class="gradient-custom">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -45,7 +63,6 @@
 
                                 </div>
                             </li>
-
                         }
                     </ul>
                     <partial name="_LoginPartial" />
@@ -58,12 +75,12 @@
             @RenderBody()
         </main>
     </div>
-
+@*
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - GameWorld - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
