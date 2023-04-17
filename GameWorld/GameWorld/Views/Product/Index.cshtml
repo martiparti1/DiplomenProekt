@@ -3,7 +3,17 @@
 <style>
 .text-center.container.py-5 {
   background-color: #E0E0E0;
-}</style>
+  border-radius:20px;
+}
+
+
+#card-round-borders{
+    border-radius: 10px;
+}
+
+
+
+</style>
 
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 {
@@ -20,31 +30,29 @@
                 @foreach (var item in Model)
                 {
                  <div class="col-lg-4 col-md-12 mb-4">
-                    <div class="card">
-                        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-                             data-mdb-ripple-color="light">
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info"> <img src="@item.Image" class="w-100" /> </a>
-                            
+                    <div id="card-round-borders" class="card">
+                        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+                         <a asp-action="Details" asp-route-id="@item.Id" > <img src="@item.Image" id="card-round-borders" class="w-100 img-thumbnail" /> </a>   
                         </div>
                         <div class="card-body">
-                            <a href="" class="text-reset">
-                                <h5 class="card-title mb-3">@item.ProductName</h5>
-                            </a>
-                            <a href="" class="text-reset">
-                                <p>@item.CategoryName</p>
-                            </a>
+                          <a href="" class="text-reset">
+                            <h5 class="card-title mb-3">@item.ProductName</h5>
+                          </a>
+                          <a href="" class="text-reset">
+                            <p>@item.CategoryName</p>
+                          </a>
                             <h6 class="mb-3">@item.Price</h6>
                            @if (this.User.Identity.IsAuthenticated)
-{
+                           {
 
-                         <form asp-controller="Cart" asp-action="AddToCart" method="post">
-                          <input type="hidden" name="productId" value="@item.Id" />
-                          <input type="number" name="quantity" value="1" />
-                          <button type="submit">Add to Cart</button>
-                         </form>
-}
+                            <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                             <input type="hidden" name="productId" value="@item.Id" />
+                             <input type="number" name="quantity" value="1" />
+                             <button type="submit">Add to Cart</button>
+                            </form>
+                           }
 
-                         </div>
+                     </div>
                      </div>
                  </div>
                 }

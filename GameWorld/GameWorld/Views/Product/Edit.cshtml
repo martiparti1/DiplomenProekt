@@ -3,13 +3,72 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<style>
+   
 
+#product form {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  justify-content :center;
+  width: 800px; /* increase the width to your desired size */
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+}
+
+#product form label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#product form input[type="text"],
+#product form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+}
+
+#product form input[type="text"]:focus,
+#product form input[type="number"]:focus {
+  border-bottom: 2px solid #8d8d8d;
+  outline: none;
+}
+
+#product form button {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#product form button:hover {
+  background-color: #1b2631;
+}
+
+/* Add margin to the body to add spacing */
+.body-product-specific {
+  margin: 90px;
+  text-align: center; /* center the content horizontally */
+}
+
+</style>
 <h1>Edit</h1>
 
 <h4>ProductEditVM</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div id ="product"class="row">
+    <div id="product" class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />

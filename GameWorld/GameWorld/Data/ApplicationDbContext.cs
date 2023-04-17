@@ -31,7 +31,7 @@ namespace GameWorld.Data
         public DbSet<GameWorld.Models.Product.ProductDeleteVM> ProductDeleteVM { get; set; }
         public DbSet<GameWorld.Models.Order.OrderIndexVM> OrderIndexVM { get; set; }
         public DbSet<GameWorld.Models.Order.OrderConfirmVM> OrderConfirmVM { get; set; }
-        
+
         
     }
 }

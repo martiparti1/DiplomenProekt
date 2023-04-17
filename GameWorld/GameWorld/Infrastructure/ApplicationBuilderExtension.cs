@@ -17,15 +17,20 @@ namespace WebShopDemo.Infrastructure
         {
             using var serviceScope = app.ApplicationServices.CreateScope();
             var services = serviceScope.ServiceProvider;
+            var cartMaker = services.GetRequiredService<ApplicationDbContext>();
+
 
             await RoleSeeder(services);
-            await SeedAdministrator(services);
+            await SeedAdministrator(services , cartMaker);
 
             var dataCategory = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedCategories(dataCategory);
 
             var dataMaker = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedMakers(dataMaker);
+
+            
+
             return app;
         }
 
@@ -45,7 +50,7 @@ namespace WebShopDemo.Infrastructure
             }
         }
 
-        public static async Task SeedAdministrator(IServiceProvider serviceProvider)
+        public static async Task SeedAdministrator(IServiceProvider serviceProvider , ApplicationDbContext cartMaker)
         {
             var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
             if (await userManager.FindByNameAsync("admin") == null)
@@ -59,7 +64,12 @@ namespace WebShopDemo.Infrastructure
                 user.Email = "admin@admin.com";
                 user.Balance = 10000;
 
+                Cart adminCart = new Cart { UserId = user.Id };
+
+                cartMaker.Carts.Add(adminCart);
+
                 var result = await userManager.CreateAsync(user, "admin123");
+                
                 if (result.Succeeded)
                 {
                     userManager.AddToRoleAsync(user, "Administrator").Wait();
@@ -95,16 +105,21 @@ namespace WebShopDemo.Infrastructure
             dataMaker.Makers.AddRange(new[]
             {
                 new Maker{MakerName="Sony"},
+                new Maker{MakerName="Nintendo"},
                 new Maker{MakerName="Microsoft"},
                 new Maker{MakerName="Bungie"},
                 new Maker{MakerName="FromSoftware"},
                 new Maker{MakerName="Atlus"},
+                new Maker{MakerName="Ubisoft"},
                 new Maker{MakerName="SquareEnix"},
                 new Maker{MakerName="Razer"},
-                new Maker{MakerName="Atlus"},
-
+                new Maker{MakerName="Logitech"},
+                new Maker{MakerName="SteelSeries"},
             });
             dataMaker.SaveChanges();
         }
+
+        
+        
     }
 }

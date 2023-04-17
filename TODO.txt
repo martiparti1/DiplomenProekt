@@ -2,8 +2,14 @@ balance done feature wise. fix access for when not enough
 slideshow added in index. change images;
 home page now displays 4 rando products;
 COMPLETE restyling everywhere; STARTED BY CHANGING THE PRODUCT INDEX ; DONE WORK ON SHOPPING HISTORY
-ADD A WISHLIST
-SHOPPING CART IS DONE;;;;;
+background fades, changed product index, create and edit. change details and delete.
+add a searchbar for the product index page.
+change navbar;
+
+add a contact / info page;
+
+ADD A WISHLIST - maybe
+SHOPPING CART IS DONE;;;;; admin shopping cart now seeded
 
 @*code below shows a little div that shows the platform*@
                             @*when done with order and balance change platform*@
