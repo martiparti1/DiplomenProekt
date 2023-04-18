@@ -1,81 +1,182 @@
 ﻿@model GameWorld.Models.Product.ProductDetailsVM
+@using System.Web.Mvc.Html
+@*<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-@{
-    ViewData["Title"] = "Details";
+    <header class="bg-dark text-light py-3">
+        <div class="container">
+            <h1 class="display-4">Product Details</h1>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="@Html.DisplayFor(model => model.Image)" alt="Product Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2>@Html.DisplayFor(model => model.ProductName)</h2>
+                <p class="lead">@Html.DisplayFor(model => model.Description)</p>
+                <ul class="list-unstyled">
+                    <li><strong>Category:</strong> @Html.DisplayFor(model => model.CategoryName)</li>
+                    <li><strong>Platform:</strong> @Html.DisplayFor(model => model.Platform)</li>
+                    <li><strong>Quantity:</strong> @Html.DisplayFor(model => model.Quantity)</li>
+                    <li><strong>Price:</strong> $@Html.DisplayFor(model => model.Price)</li>
+                    <li><strong>Discount:</strong> @Html.DisplayFor(model => model.Discount)%</li>
+                </ul>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <p class="m-0 text-center">&copy; 2023 GameWorld, Inc.</p>
+        </div>
+    </footer>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>*@
+<style>
+    body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f5f5f5
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>ProductDetailsVM</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
-        
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MakerName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MakerName)
-        </dd>
-        
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            <img src ="@Html.DisplayFor(model => model.Image)" alt="Image" width="100" />
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Platform)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Platform)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Discount)
-        </dd>
-    </dl>
-</div>
-<div>
-    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-     { <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> } |
-     @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-     { <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a> } |
-
-    <a asp-action="Index">Back to List</a>
-</div>
-@section Scripts{ 
-@{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+.hedding {
+    font-size: 20px;
+    color: #ab8181;
 }
+
+.main-section {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 5%);
+}
+
+.left-side-product-box img {
+    width: 100%;
+}
+
+.left-side-product-box .sub-img img {
+    margin-top: 5px;
+    width: 83px;
+    height: 100px;
+}
+
+.right-side-pro-detail span {
+    font-size: 15px;
+}
+
+.right-side-pro-detail p {
+    font-size: 25px;
+    color: #a1a1a1;
+}
+
+.right-side-pro-detail .price-pro {
+    color: #E45641;
+}
+
+.right-side-pro-detail .tag-section {
+    font-size: 18px;
+    color: #5D4C46;
+}
+
+.pro-box-section .pro-box img {
+    width: 100%;
+    height: 200px;
+}
+</style>
+<div class="container">
+
+    
+    <div class="col-lg-8 border p-3 main-section bg-white">
+        <div class="row hedding m-0 pl-3 pt-0 pb-3">
+            Product Detail Design Using Bootstrap 4.0
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-4 left-side-product-box pb-3">
+                <img src="@Html.DisplayFor(model => model.Image)" class="border p-3">
+                <span class="sub-img">
+                    <img src="http://nicesnippets.com/demo/pd-image2.jpg" class="border p-2">
+                    <img src="http://nicesnippets.com/demo/pd-image3.jpg" class="border p-2">
+                    <img src="http://nicesnippets.com/demo/pd-image4.jpg" class="border p-2">
+                </span>
+            </div>
+            <div class="col-lg-8">
+                <div class="right-side-pro-detail border p-3 m-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <span>Who What Wear</span>
+                            <p class="m-0 p-0">@Html.DisplayFor(model => model.ProductName)</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="m-0 p-0 price-pro">@Html.DisplayFor(model => model.Price)</p>
+                            <hr class="p-0 m-0">
+                        </div>
+                        <div class="col-lg-12 pt-2">
+                            <h5>Product Detail</h5>
+                            <span>@Html.DisplayFor(model => model.Description)</span>
+                            <hr class="m-0 pt-2 mt-2">
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="tag-section"><strong>Tag : </strong><a href="">Woman</a><a href="">,Man</a></p>
+                        </div>
+                       @if (this.User.Identity.IsAuthenticated)
+                           {
+
+                            <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                             <input type="hidden" name="productId" value="@Model.Id" />
+                             <input type="number" name="quantity" value="1" />
+                             <button type="submit">Add to Cart</button>
+                            </form>
+                           }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center pt-3">
+                <h4>More Product</h4>
+            </div>
+        </div>
+        <div class="row mt-3 p-0 text-center pro-box-section">
+            <div class="col-lg-3 pb-2">
+                <div class="pro-box border p-0 m-0">
+                    <img src="http://nicesnippets.com/demo/pd-b-image1.jpg">
+                </div>
+            </div>
+            <div class="col-lg-3 pb-2">
+                <div class="pro-box border p-0 m-0">
+                    <img src="http://nicesnippets.com/demo/pd-b-images2.jpg">
+                </div>
+            </div>
+            <div class="col-lg-3 pb-2">
+                <div class="pro-box border p-0 m-0">
+                    <img src="http://nicesnippets.com/demo/pd-b-images3.jpg">
+                </div>
+            </div>
+            <div class="col-lg-3 pb-2">
+                <div class="pro-box border p-0 m-0">
+                    <img src="http://nicesnippets.com/demo/pd-b-images4.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

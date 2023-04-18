@@ -61,13 +61,14 @@ namespace GameWorld.Controllers
         }
         public IActionResult CreateSuccess()
         { return this.View(); }
+        [Authorize(Roles = "Client")]
         public IActionResult NotEnoughBal()
         { return this.View(); }
 
         [AllowAnonymous]
-        public ActionResult Index(string searchStringCategoryName, string searchStringMakerName)
+        public ActionResult Index(string searchStringCategoryName, string searchStringPlatformName)
         {
-            List<ProductIndexVM> products = _productService.GetProducts(searchStringCategoryName, searchStringMakerName)
+            List<ProductIndexVM> products = _productService.GetProducts(searchStringCategoryName, searchStringPlatformName)
                 .Select(product => new ProductIndexVM
                 {
                     Id = product.Id,

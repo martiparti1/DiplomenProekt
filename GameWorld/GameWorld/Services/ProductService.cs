@@ -52,22 +52,22 @@ namespace GameWorld.Services
             _context.Remove(product);
             return _context.SaveChanges() != 0;
         }
-        public List<Product> GetProducts(string searchStringCategoryName, string searchStringMakerName)
+        public List<Product> GetProducts(string searchStringCategoryName, string searchStringPlatformName)
         {
             List<Product> products = _context.Products.ToList();
 
-            if (!String.IsNullOrEmpty(searchStringCategoryName) && !String.IsNullOrEmpty(searchStringMakerName))
+            if (!String.IsNullOrEmpty(searchStringCategoryName) && !String.IsNullOrEmpty(searchStringPlatformName))
             {
                 products = products.Where(x => x.Category.CategoryName.ToLower().Contains(searchStringCategoryName.ToLower())
-                && x.Maker.MakerName.ToLower().Contains(searchStringMakerName)).ToList();
+                && x.Platform.ToLower().Contains(searchStringPlatformName)).ToList();
             }
             else if (!String.IsNullOrEmpty(searchStringCategoryName))
             {
                 products = products.Where(x => x.Category.CategoryName.ToLower().Contains(searchStringCategoryName.ToLower())).ToList();
             }
-            else if (!String.IsNullOrEmpty(searchStringMakerName))
+            else if (!String.IsNullOrEmpty(searchStringPlatformName))
             {
-                products = products.Where(x => x.Maker.MakerName.ToLower().Contains(searchStringMakerName.ToLower())).ToList();
+                products = products.Where(x => x.Platform.ToLower().Contains(searchStringPlatformName.ToLower())).ToList();
             }
 
             return products;

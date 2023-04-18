@@ -2,11 +2,12 @@ balance done feature wise. fix access for when not enough
 slideshow added in index. change images;
 home page now displays 4 rando products;
 COMPLETE restyling everywhere; STARTED BY CHANGING THE PRODUCT INDEX ; DONE WORK ON SHOPPING HISTORY
-background fades, changed product index, create and edit. change details and delete.
-add a searchbar for the product index page.
-change navbar;
-
+background fades, changed product index, create and edit. change details and delete. details has a rought template in place
+add a searchbar for the product index page. // REMAKE FIRST FILTER
+change navbar; kinda done
 add a contact / info page;
+
+// FIX THE UPDATE CART AND CART INDEX!!!!!!
 
 ADD A WISHLIST - maybe
 SHOPPING CART IS DONE;;;;; admin shopping cart now seeded

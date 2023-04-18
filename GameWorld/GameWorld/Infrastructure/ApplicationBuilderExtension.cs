@@ -29,8 +29,6 @@ namespace WebShopDemo.Infrastructure
             var dataMaker = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedMakers(dataMaker);
 
-            
-
             return app;
         }
 
@@ -88,7 +86,10 @@ namespace WebShopDemo.Infrastructure
             {
                 new Category{CategoryName="Game"},
                 new Category{CategoryName="DLC"},
-                new Category{CategoryName="Accessory"},
+                new Category{CategoryName="Keyboard"},
+                new Category{CategoryName="Mouse"},
+                new Category{CategoryName="Headset"},
+                new Category{CategoryName="Controller"},
                 new Category{CategoryName="Console"},
                 
             });
@@ -119,7 +120,29 @@ namespace WebShopDemo.Infrastructure
             dataMaker.SaveChanges();
         }
 
-        
-        
+        public static void SeedPlatforms(ApplicationDbContext platformMaker)
+        {
+            if (platformMaker.Makers.Any())
+            {
+                return;
+            }
+
+            platformMaker.Makers.AddRange(new[]
+            {
+                new Maker{MakerName="Sony"},
+                new Maker{MakerName="Nintendo"},
+                new Maker{MakerName="Microsoft"},
+                new Maker{MakerName="Bungie"},
+                new Maker{MakerName="FromSoftware"},
+                new Maker{MakerName="Atlus"},
+                new Maker{MakerName="Ubisoft"},
+                new Maker{MakerName="SquareEnix"},
+                new Maker{MakerName="Razer"},
+                new Maker{MakerName="Logitech"},
+                new Maker{MakerName="SteelSeries"},
+            });
+            platformMaker.SaveChanges();
+        }
+
     }
 }

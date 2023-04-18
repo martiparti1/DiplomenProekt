@@ -1783,3 +1783,10 @@ D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debu
 D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Order\ThanksForBuying.cshtml.g.cs
 D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
 D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\ref\GameWorld.dll
+D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\System.Web.Mvc.dll
+D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\System.Web.Razor.dll
+D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\System.Web.Helpers.dll
+D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\System.Web.WebPages.Deployment.dll
+D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
+D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\System.Web.WebPages.dll
+D:\coding stuff\marti parti diplomen\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll

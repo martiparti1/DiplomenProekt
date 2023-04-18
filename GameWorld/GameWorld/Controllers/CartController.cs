@@ -158,9 +158,46 @@ namespace GameWorld.Controllers
             this._context.SaveChanges();
             return RedirectToAction("ThanksForBuying", "Order");
         }
-    }
 
-    /*public ActionResult UpdateCart(int productId, int quantity, int newQuantity) 
+        public IActionResult UpdateCart(int productId, int newQuantity)
+        {
+            if (newQuantity < 0)
+            {
+                return BadRequest("Invalid quantity value.");
+            }
+
+            string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = _context.Users.SingleOrDefault(u => u.Id == userId);
+            var cart = _context.Carts.SingleOrDefault(c => c.UserId == userId);
+            var product = this._context.Products.SingleOrDefault(p => p.Id == productId);
+
+            if (cart == null)
+            {
+                return NotFound("Cart not found.");
+            }
+
+            var cartItem = new CartItem
+            {
+                Product = product
+            };
+
+
+            if (newQuantity == 0)
+            {
+                cart.Items.Remove(cartItem);
+            }
+            else
+            {
+                cartItem.Quantity = newQuantity;
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Cart");
+        }
+    }
+    /*
+     public ActionResult UpdateCart(int productId, int quantity, int newQuantity) 
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = _context.Users.SingleOrDefault(u => u.Id == userId);
@@ -173,4 +210,5 @@ namespace GameWorld.Controllers
 
             return View(cart);
         }*/
+
 }
