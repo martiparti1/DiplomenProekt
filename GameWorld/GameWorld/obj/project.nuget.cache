@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o/z+5Fqvwr55vK/qnfqhN2+vpRCQlyphYMZUDy3CYK4KVfxij/zc1P4hZtrbf3k4M/+nrTBnXPMt5dwxGVUvuA==",
+  "dgSpecHash": "Vy/L3nG6RSnAbwgc1JARQBn0Zt8OYOOqD738Jwxz0pVaRBDK8pmDYMyg+jVdrN14Ae7WVhTTNTi4sfuxvqfcEQ==",
   "success": true,
-  "projectFilePath": "D:\\coding stuff\\marti parti diplomen\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj",
+  "projectFilePath": "D:\\coding stuff\\MARTI PARTI GAMEWORLD\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\elasticsearch.net\\7.17.5\\elasticsearch.net.7.17.5.nupkg.sha512",

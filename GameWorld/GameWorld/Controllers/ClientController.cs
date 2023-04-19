@@ -28,6 +28,7 @@ namespace WebShopDemo.Controllers
                     FirstName = u.FirstName,
                     LastName = u.LastName,
                     Address = u.Address,
+                    PhoneNumber = u.PhoneNumber,
                     Email = u.Email
                 }).ToList();
 
@@ -57,6 +58,7 @@ namespace WebShopDemo.Controllers
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Address = user.Address,
+                PhoneNumber = user.PhoneNumber,
                 Email = user.Email,
                 UserName = user.UserName
             };

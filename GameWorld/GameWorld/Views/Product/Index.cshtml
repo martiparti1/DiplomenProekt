@@ -1,15 +1,27 @@
 ﻿@model IEnumerable<GameWorld.Models.Product.ProductIndexVM>
 @using GameWorld.Models.Order
+
+@{
+    ViewData["Title"] = "Products";
+}
+
 <style>
 .text-center.container.py-5 {
   background-color: #E0E0E0;
   border-radius:15px;
 }
 
-
-#card-round-borders{
-    border-radius: 10px;
+#container-round-grey
+{
+    background-color: #FFFFFF;
+  border-radius:15px;
+  padding: 20px;
 }
+#space
+#card-round-borders{
+    border-radius: 15px;
+}
+
 
 </style>
 
@@ -20,24 +32,58 @@
     </p>
 }
 @*Category : <input type="text" name="searchStringCategoryName" />*@
-<form asp-controller="Product" asp-action="Index" method="get">
+@*<form asp-controller="Product" asp-action="Index" method="get">
     <p>
-        Platform : <input type="text" name="searchStringPlatformName" />
+        Category : <input type="text" name="searchStringCategoryName" />
         <input type="submit" value="Filter" />
     </p>
-</form>
+</form>*@
 
 <form asp-controller="Product" asp-action="Index" method="get">
-  <p>
-    Platform:
-    <label><input type="checkbox" name="searchStringPlatformName" value="ps4">PS4</label>
-    <label><input type="checkbox" name="searchStringPlatformName" value="ps5">PS5</label>
-    <label><input type="checkbox" name="searchStringPlatformName" value="pc">PC</label>
-    <label><input type="checkbox" name="searchStringPlatformName" value="xbox">Xbox</label>
-    <label><input type="checkbox" name="searchStringPlatformName" value="nintendo">Nintendo</label>
-    <input type="submit" value="Filter">
-  </p>
+    <div id="container-round-grey">
+
+
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control-small" id="category" name="searchStringCategoryName">
+            <option value="">All</option>
+            <option value="game">Game</option>
+            <option value="dlc">DLC</option>
+            <option value="console">Console</option>
+            <option value="keyboard">Keyboard</option>
+            <option value="mouse">Mouse</option>
+            <option value="mousepad">Mousepad</option>
+            <option value="headset">Headset</option>
+            <option value="controller">Controller</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="platform">Platform:</label>
+        <div id="platform" class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-dark">
+                <input type="checkbox" name="searchStringPlatformName" value="ps4">PS4
+            </label>
+            <label class="btn btn-outline-dark">
+                <input type="checkbox" name="searchStringPlatformName" value="ps5">PS5
+            </label>
+            <label class="btn btn-outline-dark">
+                <input type="checkbox" name="searchStringPlatformName" value="pc">PC
+            </label>
+            <label class="btn btn-outline-dark">
+                <input type="checkbox" name="searchStringPlatformName" value="xbox">Xbox
+            </label>
+            <label class="btn btn-outline-dark">
+                <input type="checkbox" name="searchStringPlatformName" value="nintendo">Nintendo
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+
+
+    </div>
 </form>
+<p id="space"></p>
 <body>
  
         <div class="text-center container py-5">

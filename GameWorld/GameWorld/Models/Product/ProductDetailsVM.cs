@@ -10,7 +10,7 @@ namespace GameWorld.Models.Product
 {
     public class ProductDetailsVM
     {
-        [Key]
+        
         public int Id { get; set; }
         
         [Display(Name = "Product Name")]

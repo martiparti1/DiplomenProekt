@@ -88,6 +88,7 @@ namespace WebShopDemo.Infrastructure
                 new Category{CategoryName="DLC"},
                 new Category{CategoryName="Keyboard"},
                 new Category{CategoryName="Mouse"},
+                new Category{CategoryName="Mousepad"},
                 new Category{CategoryName="Headset"},
                 new Category{CategoryName="Controller"},
                 new Category{CategoryName="Console"},
