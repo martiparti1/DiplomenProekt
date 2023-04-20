@@ -1798,7 +1798,6 @@ D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Deb
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\GameWorld.runtimeconfig.json
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\GameWorld.runtimeconfig.dev.json
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\GameWorld.dll
-D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\ref\GameWorld.dll
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\GameWorld.pdb
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Antiforgery.dll
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -2264,3 +2263,7 @@ D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\obj\Deb
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\ref\GameWorld.dll
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\GameWorld.pdb
 D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\GameWorld.genruntimeconfig.cache
+D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Contact\Messages.cshtml.g.cs
+D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Contact\ThankYou.cshtml.g.cs
+D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\bin\Debug\net5.0\ref\GameWorld.dll
+D:\coding stuff\MARTI PARTI GAMEWORLD\DiplomenProekt\GameWorld\GameWorld\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs

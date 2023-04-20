@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GameWorld.Domain.Contact>
+
+@{
+    ViewBag.Title = "Messages";
+}
+<style>
+    #container-round-white
+{
+  background-color: #FFFFFF;
+  border-radius:15px;
+  padding: 20px;
+  height:17vh;
+}
+#space{padding: 5px;}
+</style>
+<h2>Messages</h2>
+<p id="space" ></p>
+
+<table id="container-round-white" class="table  table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Submitted At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var message in Model)
+        {
+            <tr>
+                <td>@message.Name</td>
+                <td>@message.Email</td>
+                <td>@message.Subject</td>
+                <td>@message.Message</td>
+                <td>@message.SubmittedAt.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>

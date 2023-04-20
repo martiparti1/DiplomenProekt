@@ -17,7 +17,7 @@ namespace GameWorld.Abstraction
         List<Product> GetProducts();
         Product GetProductById(int productId);
         bool RemoveById(int productId);
-        List<Product> GetProducts(string searchStringCategoryName, string searchStringBrandName);
+        List<Product> GetProducts(string searchStringCategoryName, string searchStringBrandName, string searchStringProductName);
 
     }
 }

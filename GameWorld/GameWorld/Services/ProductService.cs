@@ -52,7 +52,7 @@ namespace GameWorld.Services
             _context.Remove(product);
             return _context.SaveChanges() != 0;
         }
-        public List<Product> GetProducts(string searchStringCategoryName, string searchStringPlatformName)
+        public List<Product> GetProducts(string searchStringCategoryName, string searchStringPlatformName, string searchStringProductName)
         {
             List<Product> products = _context.Products.ToList();
 
@@ -67,7 +67,12 @@ namespace GameWorld.Services
             }
             else if (!String.IsNullOrEmpty(searchStringPlatformName))
             {
-                products = products.Where(x => x.Platform.ToLower().Contains(searchStringPlatformName.ToLower())).ToList();
+                products = products.Where(x => x.Platform.ToLower().Equals(searchStringPlatformName.ToLower())).ToList();
+            }
+
+            else if (!String.IsNullOrEmpty(searchStringProductName))
+            {
+                products = products.Where(x => x.Platform.ToLower().Contains(searchStringProductName.ToLower())).ToList();
             }
 
             return products;

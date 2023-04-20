@@ -3,11 +3,18 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    #better-body{
+        width: 100vh;
+        margin:auto;
+        right:28%;
+    }
+</style>
 <body>
-<h1>Index</h1>
+<h1>My Shopping History</h1>
 
 <p>
-    <a asp-controller="Product" asp-action="Index">Back to products</a>
+    <button class="btn btn-light" onclick="location.href='@Url.Action("Index", "Product")'">Continue shopping</button>
 </p>
 
 <p>
@@ -20,11 +27,11 @@
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-10 col-xl-8">
-        <div class="card" style="border-radius: 10px;">
+        <div id="better-body"class="card" style="border-radius: 10px;">
           
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
-              <p class="lead fw-normal mb-0" style="color: #a8729a;">Receipt</p>
+              <p class="lead fw-normal mb-0" style="color: #a8729a;">Receipt - @Html.DisplayFor(modelItem => item.OrderDate)</p>
             </div>
 
             <div class="card shadow-0 border mb-4">
@@ -32,7 +39,7 @@
                 <div class="row">
                   <div class="col-md-2">
                     <img src="@Html.DisplayFor(modelItem => item.Image)"
-                      class="img-fluid" alt="Phone">
+                      class="img-fluid" alt="img"/>
                   </div>
                   <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
                     <p class="text-muted mb-0">Product: @Html.DisplayFor(modelItem => item.Product)</p>

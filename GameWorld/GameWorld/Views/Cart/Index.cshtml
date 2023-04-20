@@ -194,13 +194,10 @@ border-bottom-right-radius: 16px;
                       <h6 class="mb-0">@item.Product.Price €</h6>
                     </div>
 
-                     <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
-                         
-                     </button>
-
-                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-                    </div>
+                     <form action="@Url.Action("RemoveFromCart", "Cart")" method="post">
+                     <input type="hidden" name="productId" value="@item.Product.Id" />
+                     <button type="submit" class="close"><span aria-hidden="true">&times;</span></button>
+                     </form>
                   </div>
 
                   <hr class="my-4">
@@ -208,8 +205,9 @@ border-bottom-right-radius: 16px;
                   }
                   }
 
-                  <div> <button>Left Button</button>
-                      <button style="float: right; color: red; text-decoration: underline;" onclick="location.href='@Url.Action("ClearCart", "Cart")'">Clear Cart</button> 
+                  <div>
+                      <button class="btn btn-light" onclick="location.href='@Url.Action("Index", "Product")'">Continue Shopping</button>
+                      <button class="btn btn-danger" style="float: right; text-decoration: underline;" onclick="location.href='@Url.Action("ClearCart", "Cart")'">Clear Cart</button> 
                   </div> 
 
                 </div>
@@ -264,9 +262,7 @@ border-bottom-right-radius: 16px;
                     }
                     
                   </div>
-
-                  <button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Register</button>
+                    <button class="btn btn-success btn-lg btn-block" onclick="location.href='@Url.Action("Checkout", "Cart")'">Checkout</button>
 
                 </div>
               </div>

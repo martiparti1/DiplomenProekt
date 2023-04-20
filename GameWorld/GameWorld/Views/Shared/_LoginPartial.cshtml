@@ -7,18 +7,30 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
-            </li>
-        <li class="nav-item">
-            @{
+        <a class="nav-link text-dark" asp-controller="Cart" asp-action="Index"><i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
+        </li>
+        <li class="nav-item active">
+           <div class="dropdown show">
+             <a class="nav-link active dropdown-toggle" href="e"
+              id="dropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Hello @User.Identity.Name!
+              </a>
+
+             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                @{
                 var user = await UserManager.GetUserAsync(User);
                 if(user!= null)
                 {
-                    <a class="nav-link text-dark" href="@Url.Action("AddBalance", "Balance")">Balance: €@((double)user.Balance)</a>
-                }
-                }
-           
+               <a class="dropdown-item"href="@Url.Action("AddBalance", "Balance")">Balance: €@((double)user.Balance)</a>
+                }}
+               <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Account settings</a>
+               <a class="dropdown-item" asp-controller="Order" asp-action="MyOrders">Shopping History</a>
+             </div>
+
+            </div>
         </li>
+       
             
         
         <li class="nav-item">

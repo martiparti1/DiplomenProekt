@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Thank You";
+}
+<style>
+    .jumbotron
+    {
+        position: absolute;
+        
+        left: 50%;
+        transform: translate(-50%, 45%);
+
+        width: 120vh;
+        height:40vh;
+    }
+    .p-space{
+        padding:5px;
+    }
+</style>
+<div class="jumbotron text-center">
+    <h1 class="display-3">Thank You for reaching out!</h1>
+    <p class="p-space"></p>
+    <p class="lead"><strong>Once our team sees your message we will get in touch with you!</strong></p>
+    <hr>
+    <p class="p-space"></p>
+    <p class="lead">
+        <button class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("Index", "Home")'">Home Page</button>
+    </p>
+</div>

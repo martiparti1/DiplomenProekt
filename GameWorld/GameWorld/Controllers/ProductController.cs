@@ -66,9 +66,9 @@ namespace GameWorld.Controllers
         { return this.View(); }
 
         [AllowAnonymous]
-        public ActionResult Index(string searchStringCategoryName, string searchStringPlatformName)
+        public ActionResult Index(string searchStringCategoryName, string searchStringPlatformName, string searchStringProductName)
         {
-            List<ProductIndexVM> products = _productService.GetProducts(searchStringCategoryName, searchStringPlatformName)
+            List<ProductIndexVM> products = _productService.GetProducts(searchStringCategoryName, searchStringPlatformName, searchStringProductName)
                 .Select(product => new ProductIndexVM
                 {
                     Id = product.Id,

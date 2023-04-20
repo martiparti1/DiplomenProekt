@@ -24,6 +24,7 @@ namespace GameWorld.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<GameWorld.Models.Product.ProductCreateVM> ProductCreateVM { get; set; }
         public DbSet<GameWorld.Models.Product.ProductIndexVM> ProductIndexVM { get; set; }
         public DbSet<GameWorld.Models.Product.ProductEditVM> ProductEditVM { get; set; }

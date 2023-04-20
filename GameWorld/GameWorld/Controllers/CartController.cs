@@ -65,7 +65,7 @@ namespace GameWorld.Controllers
 
 
 
-
+        [HttpPost]
         public ActionResult RemoveFromCart(int productId)
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -75,10 +75,7 @@ namespace GameWorld.Controllers
 
             if (cart == null || user == null) return null;
 
-            var cartItem = new CartItem
-            {
-                Product = product
-            };
+            var cartItem = cart.Items.SingleOrDefault(ci => ci.Product.Id == productId);
             cart.Items.Remove(cartItem);
 
             this._context.SaveChanges();

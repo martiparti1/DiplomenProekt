@@ -86,11 +86,7 @@ namespace WebShopDemo.Infrastructure
             {
                 new Category{CategoryName="Game"},
                 new Category{CategoryName="DLC"},
-                new Category{CategoryName="Keyboard"},
-                new Category{CategoryName="Mouse"},
-                new Category{CategoryName="Mousepad"},
-                new Category{CategoryName="Headset"},
-                new Category{CategoryName="Controller"},
+                new Category{CategoryName="Accessory"},
                 new Category{CategoryName="Console"},
                 
             });
@@ -130,9 +126,9 @@ namespace WebShopDemo.Infrastructure
 
             platformMaker.Makers.AddRange(new[]
             {
-                new Maker{MakerName="Sony"},
+                new Maker{MakerName="PC"},
                 new Maker{MakerName="Nintendo"},
-                new Maker{MakerName="Microsoft"},
+                new Maker{MakerName="Xbox"},
                 new Maker{MakerName="Bungie"},
                 new Maker{MakerName="FromSoftware"},
                 new Maker{MakerName="Atlus"},

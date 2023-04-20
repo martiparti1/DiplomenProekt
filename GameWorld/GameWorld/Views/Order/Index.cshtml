@@ -3,11 +3,22 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+#container-round-white
+{
+  background-color: #FFFFFF;
+  border-radius:15px;
+  padding: 20px;
+  height:22vh;
+}
 
-<h1>Index</h1>
+#space{padding: 5px;}
+</style>
 
+<h1>Site Order History</h1>
+<p id="space"></p>
 
-<table class="table">
+<table id="container-round-white" class="table">
     <thead>
         <tr>
             <th>
@@ -19,7 +30,7 @@
             </th>
             
             <th>
-                @Html.DisplayNameFor(model => model.Product)
+                Name of the Product
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Image)
@@ -37,7 +48,7 @@
                 @Html.DisplayNameFor(model => model.Discount)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TotalPrice)
+                Final Price
             </th>
             <th></th>
         </tr>

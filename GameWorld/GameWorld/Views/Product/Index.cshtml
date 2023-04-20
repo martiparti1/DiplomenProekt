@@ -7,17 +7,23 @@
 
 <style>
 .text-center.container.py-5 {
-  background-color: #E0E0E0;
+  background-color: #FFFFFF;
   border-radius:15px;
 }
 
-#container-round-grey
+#container-round-white
 {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
   border-radius:15px;
   padding: 20px;
+  height:22vh;
 }
-#space
+#space{
+    padding:4px;
+}
+#little-space{
+    padding:1px;
+}
 #card-round-borders{
     border-radius: 15px;
 }
@@ -25,12 +31,7 @@
 
 </style>
 
-@if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-{
-    <p>
-        <a asp-action="Create" class="btn btn-success btn-sm">Add a Product</a>
-    </p>
-}
+
 @*Category : <input type="text" name="searchStringCategoryName" />*@
 @*<form asp-controller="Product" asp-action="Index" method="get">
     <p>
@@ -40,7 +41,7 @@
 </form>*@
 
 <form asp-controller="Product" asp-action="Index" method="get">
-    <div id="container-round-grey">
+    <div id="container-round-white">
 
 
     <div class="form-group">
@@ -50,14 +51,15 @@
             <option value="game">Game</option>
             <option value="dlc">DLC</option>
             <option value="console">Console</option>
-            <option value="keyboard">Keyboard</option>
-            <option value="mouse">Mouse</option>
-            <option value="mousepad">Mousepad</option>
-            <option value="headset">Headset</option>
-            <option value="controller">Controller</option>
+            <option value="accessory">Accessory</option>
         </select>
+         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+{
+    
+        <a asp-action="Create" style="float: right;" class="btn btn-success btn-sm">Add a Product</a>
+    
+}
     </div>
-
     <div class="form-group">
         <label for="platform">Platform:</label>
         <div id="platform" class="btn-group-toggle" data-toggle="buttons">
@@ -76,12 +78,14 @@
             <label class="btn btn-outline-dark">
                 <input type="checkbox" name="searchStringPlatformName" value="nintendo">Nintendo
             </label>
+           
         </div>
+        <p id="little-space"></p>
+         <button type="submit" style="float: right;" class="btn btn-danger">Clear filters</button>
+         <button type="submit" style="" class="btn btn-primary">Filter</button>
     </div>
-    <button type="submit" class="btn btn-primary">Filter</button>
-
-
     </div>
+    
 </form>
 <p id="space"></p>
 <body>
