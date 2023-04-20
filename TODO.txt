@@ -1,15 +1,11 @@
-balance done feature wise. fix access for when not enough
-slideshow added in index. change images;
-home page now displays 4 rando products;
-COMPLETE restyling everywhere; STARTED BY CHANGING THE PRODUCT INDEX ; DONE WORK ON SHOPPING HISTORY
-background fades, changed product index, create and edit. change details and delete. details has a rought template in place
-add a searchbar for the product index page. // REMAKE FIRST FILTER
-change navbar; kinda done
-add a contact / info page;
+balance works.
+fix cart update in index. 
+finish restyling.
+contact us page needs a doover.
+add stuff to db. 
+TEORIQTA SI NAPRAI CHE NEMASH NIKVO VREME BROSKI
 
-// FIX THE UPDATE CART AND CART INDEX!!!!!!
-
-ADD A WISHLIST - maybe
+ADD A WISHLIST - maybe - no 
 SHOPPING CART IS DONE;;;;; admin shopping cart now seeded
 
 @*code below shows a little div that shows the platform*@

@@ -49,15 +49,27 @@ namespace GameWorld.Controllers
                 Quantity = quantity
             };
 
-            if (!cart.Items.Contains(cartItem))
+            if (cart.Items.Count == 0)
             {
                 cart.Items.Add(cartItem);
             }
-
             else
             {
-                var index = cart.Items.IndexOf(cartItem);
-                cart.Items[index].Quantity++;
+                bool itemFound = false;
+                foreach (var item in cart.Items)
+                {
+                    if (item.Product.Equals(cartItem.Product))
+                    {
+                        item.Quantity += quantity;
+                        itemFound = true;
+                        break;
+                    }
+                }
+
+                if (!itemFound)
+                {
+                    cart.Items.Add(cartItem);
+                }
             }
             this._context.SaveChanges();
             return RedirectToAction("Index", "Cart");
@@ -156,9 +168,9 @@ namespace GameWorld.Controllers
             return RedirectToAction("ThanksForBuying", "Order");
         }
 
-        public IActionResult UpdateCart(int productId, int newQuantity)
+        public IActionResult UpdateCart(int productId, int quantity)
         {
-            if (newQuantity < 0)
+            if (quantity < 0)
             {
                 return BadRequest("Invalid quantity value.");
             }
@@ -173,19 +185,15 @@ namespace GameWorld.Controllers
                 return NotFound("Cart not found.");
             }
 
-            var cartItem = new CartItem
-            {
-                Product = product
-            };
+            var cartItem = cart.Items.SingleOrDefault(ci => ci.Product.Id == productId);
 
-
-            if (newQuantity == 0)
+            if (quantity == 0)
             {
                 cart.Items.Remove(cartItem);
             }
             else
             {
-                cartItem.Quantity = newQuantity;
+                cartItem.Quantity = quantity;
             }
 
             _context.SaveChanges();
@@ -193,19 +201,6 @@ namespace GameWorld.Controllers
             return RedirectToAction("Index", "Cart");
         }
     }
-    /*
-     public ActionResult UpdateCart(int productId, int quantity, int newQuantity) 
-        {
-            string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var user = _context.Users.SingleOrDefault(u => u.Id == userId);
-            var cart = _context.Carts.SingleOrDefault(c => c.UserId == userId);
-            var product = this._context.Products.SingleOrDefault(p => p.Id == productId);
 
-            if (cart == null || user == null) return null;
-
-            
-
-            return View(cart);
-        }*/
 
 }
