@@ -5,70 +5,60 @@
 
 <style>
     body {
-    background-color: #f5f5f5
-}
+        background-color: #f5f5f5;
+        font-size: 16px;
+        line-height: 1.5;
+    }
 
-.hedding {
-    font-size: 20px;
-    color: #ab8181;
-}
-.container{
-    border-radius: 15px;
-}
-.main-section {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 5%);
-}
+    .heading {
+        font-size: 20px;
+        color: #ab8181;
+    }
 
-.left-side-product-box img {
-    width: 100%;
-}
+    .container {
+        border-radius: 15px;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 15px;
+    }
 
-.left-side-product-box .sub-img img {
-    margin-top: 5px;
-    width: 83px;
-    height: 100px;
-}
+    .left-side-product-box img {
+        max-width: 100%;
+        height: auto;
+    }
 
-.right-side-pro-detail span {
-    font-size: 15px;
-}
+    @@media screen and (min-width: 768px) {
+        .left-side-product-box {
+            text-align: center;
+        }
+    }
 
-.right-side-pro-detail p {
-    font-size: 25px;
-    color: #a1a1a1;
-}
+    .right-side-pro-detail {
+        margin-top: 20px;
+    }
 
-.right-side-pro-detail .price-pro {
-    color: #E45641;
-}
-
-.right-side-pro-detail .tag-section {
-    font-size: 18px;
-    color: #5D4C46;
-}
-
-.pro-box-section .pro-box img {
-    width: 100%;
-    height: 200px;
-}
+    @@media screen and (min-width: 992px) {
+        .right-side-pro-detail {
+            margin-top: 0;
+        }
+    }
 </style>
 
-    <div class="col-lg-8 border p-3 main-section bg-white container">
+
+<body>
+    <div class=" border p-3 main-section bg-white container">
         <div class="row hedding m-0 pl-3 pt-0 pb-3">
             <h1 style="color: black">@Html.DisplayFor(model => model.ProductName)</h1>
         </div>
         <div class="row m-0">
             <div class="col-lg-4 left-side-product-box pb-3">
                 <img src="@Html.DisplayFor(model => model.Image)" class="border p-3">
-                @if((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                 {
-                    
-                     <a asp-action="Edit" asp-route-id="@Model.Id")" class="btn btn-primary">Edit</a>
-                     <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
-                    
+
+                    <a asp-action="Edit" asp-route-id="@Model.Id" )" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+
                 }
             </div>
             <div class="col-lg-8">
@@ -88,47 +78,20 @@
                             <hr class="m-0 pt-2 mt-2">
                         </div>
                         <div class="col-lg-12">
-                            <p class="tag-section"><strong>Category: </strong><a href="">@Html.DisplayFor(model=>model.CategoryName)</a></p>
+                            <p class="tag-section"><strong>Category: </strong><a href="">@Html.DisplayFor(model => model.CategoryName)</a></p>
                         </div>
-                       @if (this.User.Identity.IsAuthenticated)
-                           {
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
 
                             <form asp-controller="Cart" asp-action="AddToCart" method="post">
-                             <input type="hidden" name="productId" value="@Model.Id" />
-                             <input type="number" name="quantity" value="1" />
-                             <button class="btn btn-success" onclick="location.href='@Url.Action("AddToCart" , "Cart")'">Add to Cart</button>
+                                <input type="hidden" name="productId" value="@Model.Id" />
+                                <input type="number" name="quantity" value="1" />
+                                <button class="btn btn-success" onclick="location.href='@Url.Action("AddToCart" , "Cart")'">Add to Cart</button>
                             </form>
-                           }
+                        }
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12 text-center pt-3">
-                <h4>More Product</h4>
-            </div>
         </div>
-        <div class="row mt-3 p-0 text-center pro-box-section">
-            <div class="col-lg-3 pb-2">
-                <div class="pro-box border p-0 m-0">
-                    <img src="http://nicesnippets.com/demo/pd-b-image1.jpg">
-                </div>
-            </div>
-            <div class="col-lg-3 pb-2">
-                <div class="pro-box border p-0 m-0">
-                    <img src="http://nicesnippets.com/demo/pd-b-images2.jpg">
-                </div>
-            </div>
-            <div class="col-lg-3 pb-2">
-                <div class="pro-box border p-0 m-0">
-                    <img src="http://nicesnippets.com/demo/pd-b-images3.jpg">
-                </div>
-            </div>
-            <div class="col-lg-3 pb-2">
-                <div class="pro-box border p-0 m-0">
-                    <img src="http://nicesnippets.com/demo/pd-b-images4.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
-
+</body>

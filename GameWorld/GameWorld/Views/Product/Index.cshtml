@@ -11,13 +11,31 @@
   border-radius:15px;
 }
 
-#container-round-white
-{
-  background-color: #FFFFFF;
-  border-radius:15px;
-  padding: 20px;
-  height:22vh;
-}
+    #container-round-white {
+        background-color: #FFFFFF;
+        border-radius: 15px;
+        padding: 20px;
+        height: auto; /* Remove fixed height */
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control-small {
+        width: 100%;
+        max-width: 300px; /* Set max width for smaller screens */
+    }
+
+    .btn-group-toggle {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .btn-outline-dark {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
 #space{
     padding:4px;
 }
@@ -30,15 +48,6 @@
 
 
 </style>
-
-
-@*Category : <input type="text" name="searchStringCategoryName" />*@
-@*<form asp-controller="Product" asp-action="Index" method="get">
-    <p>
-        Category : <input type="text" name="searchStringCategoryName" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>*@
 
 <form asp-controller="Product" asp-action="Index" method="get">
     <div id="container-round-white">

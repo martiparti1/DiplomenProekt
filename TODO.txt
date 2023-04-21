@@ -1,6 +1,7 @@
 balance works.
 fix cart update in index. 
 finish restyling.
+ALMOST ALL IS ADAPTIVE DO TESTING
 contact us page needs a doover.
 add stuff to db. 
 TEORIQTA SI NAPRAI CHE NEMASH NIKVO VREME BROSKI

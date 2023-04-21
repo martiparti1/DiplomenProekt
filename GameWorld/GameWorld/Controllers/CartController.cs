@@ -184,9 +184,13 @@ namespace GameWorld.Controllers
             {
                 return NotFound("Cart not found.");
             }
+           
 
             var cartItem = cart.Items.SingleOrDefault(ci => ci.Product.Id == productId);
-
+            if (cartItem == null)
+            {
+                return NotFound("Cart item not found.");
+            }
             if (quantity == 0)
             {
                 cart.Items.Remove(cartItem);

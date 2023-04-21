@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 
+
 <style>
     .navbar {
         background: #FFFFFF;
@@ -12,18 +13,45 @@
     .container-.navbar{
         border-radius: 20px;
     }
-    
-    .footer {
-        background: #FFFFFF;
-        border-radius: 20px; /* add rounded corners */
-        height: 65px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        left: 13%;
-    }
-.gradient-custom 
+    .navbar {
+  background: #FFFFFF;
+  border-radius: 20px; /* add rounded corners */
+  min-height: 65px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* allow items to wrap */
+}
+
+.container.custom-container {
+  padding-bottom: 60px;
+  width: 100%; /* take up full width of screen */
+}
+
+@@media (min-width: 576px) {
+  .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+@@media (max-width: 575px) {
+  .navbar-brand,
+  .navbar-nav {
+    margin: 0;
+  }
+
+  .navbar-collapse {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+
+.gradient-custom
 {
 background: radial-gradient(circle at center, #6AC4FF, #D68EB2);
 }
@@ -31,10 +59,21 @@ background: radial-gradient(circle at center, #6AC4FF, #D68EB2);
 .custom-container{
     max-width: 1600px;
     margin: 0 auto;
+    width: auto;
 }
 
+    .footer {
+        padding: 20px 0;
+        background-color: #f8f9fa;
+        text-align: center;
+        border-top: 1px solid #ccc;
+    }
+    .container.custom-container {
+        padding-bottom: 60px;
+    }
 
 </style>
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -87,20 +126,22 @@ background: radial-gradient(circle at center, #6AC4FF, #D68EB2);
             </div>
         </nav>
     </header>
+    <footer class=" footer text-muted">
+        <div class="container" style="text-align: center;">
+            &copy; 2023 - GameWorld - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> | <a asp-area="" asp-controller="Contact" asp-action="Index">Contact Us</a>
+        </div>
+    </footer>
     <div class="container custom-container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer  text-muted custom-container">
-        <div class="container custom-container">
-            &copy; 2023 - GameWorld - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> | <a asp-area="" asp-controller="Contact" asp-action="Index">Contact Us</a>
-        </div>
-    </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
