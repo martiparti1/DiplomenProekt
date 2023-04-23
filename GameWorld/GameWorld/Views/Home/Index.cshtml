@@ -3,95 +3,185 @@
     ViewData["Title"] = "Home Page";
 }
 
+@*<style>
+    #container-round-white {
+        background-color: #FFFFFF;
+        border-radius: 15px;
+        padding: 20px;
+        height: auto; 
+    }
+    .slideshow-container {
+        position: relative;
+        height: 45vh;
+        max-height: 600px;
+        overflow: hidden;
+    }
+
+    .mySlides {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 1s;
+        width: 100%;
+    }
+
+    .mySlides.fade {
+        opacity: 1;
+    }
+
+    .mySlides img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .text-center.container.py-5 {
+        background-color: #FFFFFF;
+        border-radius: 15px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        max-height: 501px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 992px) {
+        .slideshow-container {
+            height: 35vh;
+        }
+    }
+
+   @@media (max-width: 768px) {
+        .slideshow-container {
+            height: 25vh;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .mySlides {
+            position: relative;
+            transform: none;
+        }
+
+        .slideshow-container {
+            height: 20vh;
+            max-height: 300px;
+        }
+    }
+</style>*@
 <style>
+    /* Define common styles */
+    #container-round-white {
+        background-color: #FFFFFF;
+        border-radius: 15px;
+        padding: 20px;
+        height: auto; 
+    }
 
-#container-round-white {
-    background-color: #FFFFFF;
-    border-radius: 15px;
-    padding: 20px;
-    height: auto; 
-}
-.slideshow-container {
-  position: relative;
-  height: 45vh;
-  max-height: 600px;
-  overflow: hidden;
-}
+    .slideshow-container {
+        position: relative;
+        max-height: 600px;
+        overflow: hidden;
+    }
 
-#container-round-white {
-  background-color: #FFFFFF;
-  border-radius: 15px;
-  padding: 20px;
-  height: auto; 
-}
+    .mySlides {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 1s;
+        width: 100%;
+    }
 
-.mySlides {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 1s;
-  width: 100%;
-}
+    .mySlides.fade {
+        opacity: 1;
+    }
 
-.mySlides.fade {
-  opacity: 1;
-}
+    .mySlides img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        margin: auto;
+    }
 
-.mySlides img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  margin: auto;
-}
+    .text-center.container.py-5 {
+        background-color: #FFFFFF;
+        border-radius: 15px;
+    }
 
-.text-center.container.py-5 {
-  background-color: #FFFFFF;
-  border-radius: 15px;
-}
+    .product-image {
+        width: 100%;
+        height: auto;
+        max-height: 501px;
+    }
 
-.product-image {
-  width: 100%;
-  height: auto;
-  max-height: 501px;
-}
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
+    /* Responsive adjustments */
 
-@@media (max-width: 992px) {
-  .col-lg-4 {
-    flex: 0 0 50%;
-    max-width: 100%;
-  }
-}
+    /* Mobile */
+    @@media (max-width: 576px) {
+        .slideshow-container {
+            height: 200px;
+            max-height: none;
+        }
 
-@@media (max-width: 576px) {
-  .col-lg-4 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
+        .mySlides {
+            position: relative;
+            transform: none;
+        }
 
+        .product-image {
+            max-height: 250px;
+        }
+    }
 
+    /* Tablet */
+    @@media (min-width: 576px) and (max-width: 992px) {
+        .slideshow-container {
+            height: 300px;
+        }
+
+        .product-image {
+            max-height: 350px;
+        }
+    }
+
+    /* Desktop */
+    @@media (min-width: 992px) {
+        .slideshow-container {
+            height: 450px;
+        }
+
+        .product-image {
+            max-height: 501px;
+        }
+    }
 </style>
 
-
-    <h1 style="text-align:center; color:#FFFFFF;"><strong>GameWorld</strong></h1>
-    <h4 style="text-align:center; color:#FFFFFF; "><i>Gameworld is a gamer's paradise, a one-stop-shop for all your gaming needs. From the latest consoles to the hottest games, Gameworld has everything you need to immerse yourself in the world of gaming and unleash your passion for play.</i></h4>
-
 <div class="slideshow-container">
-  <div id="container-round-white" class="mySlides fade">
-    <img src="~/images/razersale.png" />
-  </div>
-  <div id="container-round-white" class="mySlides fade">
-    <img src="~/images/spring.png">
-  </div>
-  
+    <div id="container-round-white" class="mySlides fade">
+        <img src="~/images/razersale.png" />
+    </div>
+    <div id="container-round-white" class="mySlides fade">
+        <img src="~/images/spring.png">
+    </div>
 </div>
+
 <div class="text-center container py-5">
             
   <h1>Our favorite games!</h1>
