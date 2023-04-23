@@ -1,6 +1,7 @@
 ﻿using GameWorld.Abstraction;
 using GameWorld.Data;
 using GameWorld.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -12,9 +13,9 @@ using System.Security.Claims;
 
 namespace GameWorld.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
-        //this is the cart controller
 
         private readonly IProductService _productService;
         private readonly ApplicationDbContext _context;
@@ -115,7 +116,7 @@ namespace GameWorld.Controllers
             return RedirectToAction("Index", "Cart");
         }
 
-        // [HttpPost]
+
         public ActionResult Checkout()
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);

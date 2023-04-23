@@ -61,7 +61,9 @@ namespace GameWorld.Controllers
         }
         public IActionResult CreateSuccess()
         { return this.View(); }
-        [Authorize(Roles = "Client")]
+
+        
+        [AllowAnonymous]
         public IActionResult NotEnoughBal()
         { return this.View(); }
 

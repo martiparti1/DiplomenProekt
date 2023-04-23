@@ -84,7 +84,8 @@ border-bottom-right-radius: 16px;
                       <h6 class="text-black mb-0">@item.Product.ProductName (@item.Product.Platform.ToUpper())</h6>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                           <input type="number" name="quantity" min="0" value="@item.Quantity" onchange="updateCart(@item.Product.Id, this.value)">
+                           @*<input type="number" name="quantity" min="0" value="@item.Quantity" onchange="updateCart(@item.Product.Id, this.value)">*@
+                           <input type="text" class="form-control rounded-pill" aria-label="Product name" min="0" name="quantity"  value="@item.Quantity" onchange="updateCart(@item.Product.Id, this.value)">
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                       <h6 class="mb-0">@item.Product.Price €</h6>

@@ -42,6 +42,8 @@ namespace GameWorld.Controllers
                 }).ToList();
             return View(orders);
         }
+    
+        [Authorize(Roles = "Client,Administrator")]
         public IActionResult MyOrders(string searchString)
         {
             string currentUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);

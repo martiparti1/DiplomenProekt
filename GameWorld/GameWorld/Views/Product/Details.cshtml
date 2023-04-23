@@ -65,11 +65,12 @@
                 <div class="right-side-pro-detail border p-3 m-0">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h3>Platform</h3>
-                            <h4 class="m-0 p-0" style="color: black; text-transform: uppercase;">@Html.DisplayFor(model => model.Platform)</h4>
+                            <h3>Platform -  @Html.DisplayFor(model => model.Platform)</h3>
+                            
                         </div>
                         <div class="col-lg-12">
                             <p class="m-0 p-0 price-pro">@Html.DisplayFor(model => model.Price)€</p>
+                            <p class="m-0 p-0 price-pro">Discout: @Html.DisplayFor(model => model.Discount)%</p>
                             <hr class="p-0 m-0">
                         </div>
                         <div class="col-lg-12 pt-2">
@@ -78,14 +79,15 @@
                             <hr class="m-0 pt-2 mt-2">
                         </div>
                         <div class="col-lg-12">
-                            <p class="tag-section"><strong>Category: </strong><a href="">@Html.DisplayFor(model => model.CategoryName)</a></p>
+                            <p class="tag-section"><strong>Category: </strong>@Html.DisplayFor(model => model.CategoryName)</p>
+                            <p style="color:red">Quantity : @Html.DisplayFor(model => model.Quantity)</p>
                         </div>
-                        @if (this.User.Identity.IsAuthenticated)
+                        @if (this.User.Identity.IsAuthenticated && Model.Quantity > 0)
                         {
 
                             <form asp-controller="Cart" asp-action="AddToCart" method="post">
                                 <input type="hidden" name="productId" value="@Model.Id" />
-                                <input type="number" name="quantity" value="1" />
+                                <input type="number" class="form-control rounded-pill" name="quantity" aria-label="Product name" min="1" value="1"/>
                                 <button class="btn btn-success" onclick="location.href='@Url.Action("AddToCart" , "Cart")'">Add to Cart</button>
                             </form>
                         }

@@ -17,10 +17,17 @@
     <button class="btn btn-light" onclick="location.href='@Url.Action("Index", "Product")'">Continue shopping</button>
 </p>
 
-<p>
-        Product name: <input type="text" name="searchString" />
-        <input type="submit" value="Filter" />
-    </p>
+<form asp-controller="Order" asp-action="MyOrders" method="get">
+<div class="row">
+  <div class="col-md-4">
+    <input type="text" class="form-control rounded-pill" placeholder="Product name" aria-label="Product name" name="searchString">
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-light" value="Filter">Filter</button>
+  </div>
+</div>
+  
+</form>
 @foreach (var item in Model)
 {
 <section class="h-100">

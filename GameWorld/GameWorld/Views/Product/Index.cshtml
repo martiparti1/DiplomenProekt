@@ -32,6 +32,11 @@
         flex-wrap: wrap;
     }
 
+    .img
+    {
+        max-width: 337px;
+        max-height : 501px;
+    }
     .btn-outline-dark {
         margin-right: 10px;
         margin-bottom: 10px;
@@ -55,7 +60,7 @@
 
     <div class="form-group">
         <label for="category">Category:</label>
-        <select class="form-control-small" id="category" name="searchStringCategoryName">
+        <select class="form-control-small" id="category" name="searchStringCategoryName" >
             <option value="">All</option>
             <option value="game">Game</option>
             <option value="dlc">DLC</option>
@@ -98,7 +103,6 @@
 </form>
 <p id="space"></p>
 <body>
- 
         <div class="text-center container py-5">
             
             <h1>All products</h1>
@@ -108,7 +112,7 @@
                  <div class="col-lg-4 col-md-12 mb-4">
                     <div id="card-round-borders" class="card">
                         <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
-                         <a asp-action="Details" asp-route-id="@item.Id" > <img src="@item.Image" id="card-round-borders" class="w-100 img-thumbnail" /> </a>   
+                         <a asp-action="Details" asp-route-id="@item.Id"> <img src="@item.Image" id="card-round-borders " class="w-100 img-thumbnail" /> </a>   
 
                          @if(item.Quantity <= 0)
                             {
@@ -200,8 +204,8 @@
 
                             <form asp-controller="Cart" asp-action="AddToCart" method="post">
                              <input type="hidden" name="productId" value="@item.Id" />
-                             <input type="number" name="quantity" value="1" min="1" />
-                             <button type="submit">Add to Cart</button>
+                             <input type="number" class="form-control rounded-pill" name="quantity" aria-label="Product name" min="1" value="1"/>
+                             <button type="submit" class="btn btn-success btn-block">Add to Cart</button>
                             </form>
                            }
 

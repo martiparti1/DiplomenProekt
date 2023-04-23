@@ -1,23 +1,38 @@
-﻿@model IEnumerable<GameWorld.Models.Product.ProductIndexVM>
-
+﻿
 @{
     ViewData["Title"] = "Home Page";
 }
 
-
 <style>
+
+#container-round-white {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px;
+    height: auto; 
+}
 .slideshow-container {
   position: relative;
-  height: 60vh;
+  height: 45vh;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+#container-round-white {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 20px;
+  height: auto; 
 }
 
 .mySlides {
   position: absolute;
-  top: 5%;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 1s;
+  width: 100%;
 }
 
 .mySlides.fade {
@@ -27,53 +42,106 @@
 .mySlides img {
   display: block;
   height: auto;
-
+  max-width: 100%;
   margin: auto;
 }
 
+.text-center.container.py-5 {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  max-height: 501px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@@media (max-width: 992px) {
+  .col-lg-4 {
+    flex: 0 0 50%;
+    max-width: 100%;
+  }
+}
+
+@@media (max-width: 576px) {
+  .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
 </style>
+
+
+    <h1 style="text-align:center; color:#FFFFFF;"><strong>GameWorld</strong></h1>
+    <h4 style="text-align:center; color:#FFFFFF; "><i>Gameworld is a gamer's paradise, a one-stop-shop for all your gaming needs. From the latest consoles to the hottest games, Gameworld has everything you need to immerse yourself in the world of gaming and unleash your passion for play.</i></h4>
+
 <div class="slideshow-container">
-  <div class="mySlides fade">
+  <div id="container-round-white" class="mySlides fade">
     <img src="~/images/razersale.png" />
   </div>
-  <div class="mySlides fade">
+  <div id="container-round-white" class="mySlides fade">
     <img src="~/images/spring.png">
   </div>
   
 </div>
-<div class="row">
-    @foreach (var item in Model.Take(3))
-    {
-              <div class="col-lg-4 col-md-12 mb-4">
-                    <div id="card-round-borders" class="card">
-                        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
-                         <a asp-controller="Product"asp-action="Details" asp-route-id="@item.Id" > <img src="@item.Image" id="card-round-borders" class="w-100 img-thumbnail" /> </a>   
-                        </div>
-                       
-                        <div class="card-body">
-                           
-                            <h5 class="card-title mb-3">@item.ProductName</h5>
-                          
-                         
-                            <h6 class="mb-3">@item.CategoryName</h6>
-                          
-                          
-                            <h6 class="mb-3">@item.Price€</h6>
-                           @if (this.User.Identity.IsAuthenticated)
-                           {
+<div class="text-center container py-5">
+            
+  <h1>Our favorite games!</h1>
+  <div class="row">
+    <div class="col-lg-4 col-md-12 mb-4">
+      <div id="card-round-borders" class="card">
+        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+          <a href="Product/Details/1" > <img src="https://gamefaqs.gamespot.com/a/box/3/1/9/825319_front.jpg" id="card-round-borders " class="product-image w-100 img-thumbnail" /> </a>   
+        </div>
+        <div class="card-body">
+          <a  class="text-reset">
+            <h5 class="card-title mb-3">Elden Ring</h5>
+          </a>        
+            <h6 class="mb-3">PC</h6>
+          </div>
+        </div>
+    </div>
 
-                            <form asp-controller="Cart" asp-action="AddToCart" method="post">
-                             <input type="hidden" name="productId" value="@item.Id" />
-                             <input type="number" name="quantity" value="1" min="1" />
-                             <button type="submit">Add to Cart</button>
-                            </form>
-                           }
+    <div class="col-lg-4 col-md-12 mb-4">
+      <div id="card-round-borders" class="card">
+        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+          <a href="Product/Details/3" > <img src="https://media.gamestop.com/i/gamestop/god-of-warHeroTM/god-of-war.jpg?$POI$&w=768&aspect=.66:1" id="card-round-borders " class="product-image w-100 img-thumbnail" /> </a>   
+        </div>
+        <div class="card-body">
+          <a  class="text-reset">
+            <h5 class="card-title mb-3">God of War</h5>
+          </a>        
+            <h6 class="mb-3">PC</h6>
+        </div>
+      </div>
+    </div>
 
-                     </div>
-                     </div>
-                 </div>
-    }
+
+    <div class="col-lg-4 col-md-12 mb-4">
+      <div id="card-round-borders" class="card">
+        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+          <a href="Product/Details/4" > <img src="https://m.media-amazon.com/images/M/MV5BZDI2ZDAwNDUtN2JhOC00NDg5LWIwZjItOGY0N2Y0YzVmN2M0XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_FMjpg_UX1000_.jpg" id="card-round-borders " class="product-image w-100 img-thumbnail" /> </a>   
+        </div>
+        <div class="card-body">
+          <a  class="text-reset">
+            <h5 class="card-title mb-3">NieR: Automata</h5>
+          </a>        
+            <h6 class="mb-3">PC</h6>
+          </div>
+        </div>
+    </div>
+  </div>
+
 </div>
+
 <script>
 let slideIndex = 0;
 showSlides();
@@ -86,6 +154,6 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) { slideIndex = 1 }
   slides[slideIndex - 1].classList.add("fade");
-  setTimeout(showSlides, 3400); // Change image every 5 seconds
+  setTimeout(showSlides, 3400); 
 }
 </script>

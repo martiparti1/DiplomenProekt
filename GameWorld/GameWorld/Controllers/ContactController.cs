@@ -16,13 +16,12 @@ namespace GameWorld.Controllers
             _context = context;
         }
 
+        
         public ActionResult Index()
         {
             return View();
         }
-
         [HttpPost]
-
         public ActionResult Submit(Contact contact)
         {
 
