@@ -27,6 +27,7 @@
   width: 100%; /* take up full width of screen */
 }
 
+
 @@media (min-width: 576px) {
   .navbar-nav {
     flex-direction: row;
@@ -87,7 +88,7 @@ background: radial-gradient(circle at center, #6AC4FF, #D68EB2);
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 custom-container">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GameWorld</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><strong>GW</strong></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -121,6 +122,18 @@ background: radial-gradient(circle at center, #6AC4FF, #D68EB2);
                             </li>
                         }
                     </ul>
+                    <div class="navbar-search ml-auto">
+                    <form asp-controller="Product" asp-action="Index" method="get">
+                         <div class="input-group">
+                           <input type="text" class="form-control" name="searchStringProductName" placeholder="Search for a product...">
+                           <div class="input-group-append">
+                           <button type="submit" class="btn btn-outline-primary">
+                           <span class="button-text">Search</span>
+                           </button>
+                          </div>
+                            </div>
+                     </form>
+                     </div>
                     <partial name="_LoginPartial" />
                 </div>
             </div>

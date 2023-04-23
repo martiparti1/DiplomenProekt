@@ -110,7 +110,19 @@
                         <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
                          <a asp-action="Details" asp-route-id="@item.Id" > <img src="@item.Image" id="card-round-borders" class="w-100 img-thumbnail" /> </a>   
 
-                          @if(item.Platform.ToLower().Equals("ps5"))
+                         @if(item.Quantity <= 0)
+                            {
+                                <div class="mask">
+                <div class="d-flex justify-content-start align-items-end h-100">
+                  <h5><span class="badge bg-primary ms-2"><strong>SOLD OUT</strong></span></h5>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </div>
+                            }
+                              
+                            @if(item.Platform.ToLower().Equals("ps5"))
                             { 
                                 <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
@@ -160,24 +172,30 @@
                             { 
                                 <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
-                  <h5><span class="badge bg-dark ms-2">PC</span></h5>
+                  <h5><span class="badge bg-dark text-white ms-2">PC</span></h5>
                 </div>
               </div>
               <div class="hover-overlay">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </div>
                             }
+                            
                         </div>
                        
                         <div class="card-body">
-                          <a href="" class="text-reset">
+                          <a  class="text-reset">
                             <h5 class="card-title mb-3">@item.ProductName</h5>
                           </a>
-                          <a href="" class="text-reset">
+                          <a  class="text-reset">
                             <p>@item.CategoryName</p>
                           </a>
+
                             <h6 class="mb-3">@item.Price€</h6>
-                           @if (this.User.Identity.IsAuthenticated)
+
+                            <a  class="text-reset">
+                            <p style="color:red">Quantity : @item.Quantity</p>
+                          </a>
+                           @if (this.User.Identity.IsAuthenticated && item.Quantity > 0)
                            {
 
                             <form asp-controller="Cart" asp-action="AddToCart" method="post">

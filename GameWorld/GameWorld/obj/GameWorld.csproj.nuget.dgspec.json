@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Student\\Documents\\martiparti\\MARTI PARTI DIPLOMEN\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj": {}
+    "D:\\na marti diplomata(school version\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Student\\Documents\\martiparti\\MARTI PARTI DIPLOMEN\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj": {
+    "D:\\na marti diplomata(school version\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Student\\Documents\\martiparti\\MARTI PARTI DIPLOMEN\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj",
+        "projectUniqueName": "D:\\na marti diplomata(school version\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj",
         "projectName": "GameWorld",
-        "projectPath": "C:\\Users\\Student\\Documents\\martiparti\\MARTI PARTI DIPLOMEN\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj",
-        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Student\\Documents\\martiparti\\MARTI PARTI DIPLOMEN\\DiplomenProekt\\GameWorld\\GameWorld\\obj\\",
+        "projectPath": "D:\\na marti diplomata(school version\\DiplomenProekt\\GameWorld\\GameWorld\\GameWorld.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\na marti diplomata(school version\\DiplomenProekt\\GameWorld\\GameWorld\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.116\\RuntimeIdentifierGraph.json"
         }
       }
     }

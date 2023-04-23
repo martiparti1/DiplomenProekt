@@ -72,7 +72,7 @@ namespace GameWorld.Services
 
             else if (!String.IsNullOrEmpty(searchStringProductName))
             {
-                products = products.Where(x => x.Platform.ToLower().Contains(searchStringProductName.ToLower())).ToList();
+                products = products.Where(x => x.ProductName.ToLower().Contains(searchStringProductName.ToLower())).ToList();
             }
 
             return products;

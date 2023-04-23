@@ -197,7 +197,14 @@ namespace GameWorld.Controllers
             }
             else
             {
-                cartItem.Quantity = quantity;
+                if (quantity > product.Quantity)
+                {
+                    return BadRequest("Invalid quantity value.");
+                }
+                else
+                {
+                    cartItem.Quantity = quantity;
+                }
             }
 
             _context.SaveChanges();
